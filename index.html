@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP PROTOCOL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- this is nav bar -->
+    <nav class="navbar">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <a href="./index.html" class="text-decoration-none text-white ">
+                <h2>UDP PROTOCOL</h2>
+            </a>
+        </div>
+        <div class="col-4 text-center h4">
+            <a href="./demo.html" class="text-decoration-none text-white ">
+                Start Demo
+            </a>
+        </div>
+    </nav>
+    <div class="container m-5">
+        <div class="h4 border border-primary-subtle rounded shadow  p-4">UDP header is an 8-bytes fixed and simple
+            header. The first 8 Bytes contains all necessary header information and the remaining part consist of data.
+            UDP port number fields are each 16 bits long, therefore the range for port numbers is defined from 0 to
+            65535; port number 0 to 1023 are reserved. Port numbers help to distinguish different user requests or processes.
+        </div>
+        <div class="row m-3">
+
+            <div class="col-6 m-3 p-3 border border-primary-subtle rounded shadow">
+                <h2 class="m-1">UDP Header</h2>
+                <ol>
+                    <li class="m-2 h4"><span>Source Port:</span> Source Port is a 2 Byte long field used to identify the
+                        port number of the source.</li>
+                    <li class="m-2 h4"><span>Destination Port:</sapn> It is a 2 Byte long field, used to identify the
+                            port of the destined packet.</li>
+                    <li class="m-2 h4"><span>Length:</span> Length is the length of UDP including the header and the
+                        data. It is a 16-bits field.</li>
+                    <li class="m-2 h4"><span>Checksum:</span> Checksum is 2 Bytes long field. It is the 16-bit one’s
+                        complement of the one’s complement sum of the UDP header, the pseudo-header of information from
+                        the IP header, and the data, padded with zero octets at the end (if necessary) to make a
+                        multiple of two octets.</li>
+                </ol>
+            </div>
+            <div class="col-5 m-3 p-3">
+                <div class="row">
+                    <div class="box border border-primary-subtle rounded p-5 shadow shadow-lg">
+                        <div class="row">
+                            <div class="col-3">0</div>
+                            <div class="col-3" style="text-align: right;">15</div>
+                            <div class="col-3">16</div>
+                            <div class="col-3" style="text-align: right;">31</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 border-info border text-xl-center p-2">Source Port Number(16 bits)</div>
+                            <div class="col-6 border-info border text-xl-center p-2">Destination Port Number(16 bits)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 border border-info text-xl-center p-2">Length (UDP Header + Data)(16 bits)</div>
+                            <div class="col-6 border border-info text-xl-center p-2">UDP Checksum(16 bits)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 border border-info text-xl-center  p-2">
+                                Application Data (16bits)
+                            </div></div>
+                    </div>
+                </div>
+                <!-- <img src="./media/udp_header.webp" alt="" class="img-thumbnail shadow-lg"> -->
+                <div class="m-4 justify-content-center text-center">
+                    <a href="./demo.html">
+                        <button class="btn btn-dark">Start Demo</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

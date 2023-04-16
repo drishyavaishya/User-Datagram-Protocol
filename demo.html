@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP PROTOCOL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>    
+    <!-- this is nav bar -->
+    <nav class="navbar">
+        <div class="col-4">
+        </div>
+        <div class="col-4 text-center">
+            <a href="./index.html" class="text-decoration-none text-white" >
+                <h2>UDP PROTOCOL</h2>
+            </a>
+        </div>
+        <div class="col-4 text-center h4">
+            <a href="./demo.html" class="text-decoration-none text-white">
+                Reset
+            </a>
+        </div>
+    </nav>
+    <div class="container-fluid row text-center">
+
+        <!-- first box -->
+        <div class="col-4 mt-3 mx-2 p-2 border rounded border-primary-subtle shadow">
+            <p class="h3">Data Arrived!!!</p>
+            <p class="h4">Add UDP Header To Data</p>
+            <div class="container border rounded border-primary-subtle shadow-sm mt-3 p-3">
+
+                <p class="">Data Length: <span id="data-length-1"></span></p>
+                <p class="">Available Ports: <span id="available-ports-text">1024 to <span
+                            id="available-ports-1"></span></span></p>
+                <p class="">Destination Port: <span id="destination-port-1"></span></p>
+                <p class="">IP Length : 8</p>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-5 border border-primary-subtle rounded-top p-2">
+                    <input type="text" class="form-control" id="source-port-1-input" placeholder="Source Port">
+
+                </div>
+                <div class="col-5 border border-primary-subtle rounded-top p-2">
+                    <input type="text" class="form-control" id="destination-port-1-input"
+                        placeholder="Destination Port">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5 border border-primary-subtle p-2">
+                    <input type="text" class="form-control" id="length-1-input" placeholder="Length">
+                </div>
+                <div class="col-5 border border-primary-subtle p-2">Checksum: XXXX</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10 border border-primary-subtle rounded-bottom p-2">Data To Send</div>
+            </div>
+            <div class="submit my-4">
+                <button type="button" onclick="verifyAddedHeader()" class="btn btn-dark">Send Packet</button>
+            </div>
+        </div>
+        <!-- Response box -->
+        <div class="col-4 mt-3 mx-2 p-2 border border-primary-subtle rounded shadow">
+            <p class="h3" id="response-text">Waiting For Response!!!</p>
+            <p class="h4">Breakdown The UDP Header</p>
+            <p class="mb-5 h6">IP Length : 8 </p>
+            <div class="row justify-content-center mt-4 ">
+                <div class="col-5 border border-primary-subtle rounded-top p-2">Souuce Port: <span id="source-port-2"></span>
+                </div>
+                <div class="col-5 border border-primary-subtle rounded-top p-2">Destination Port: <span
+                        id="destination-port-2"></span></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5 border border-primary-subtle p-2">Length: <span id="length-2"></span></div>
+                <div class="col-5 border border-primary-subtle p-2">Checksum: XXXX</div>
+            </div>
+            <div class="row justify-content-center ">
+                <div class="col-10 border border-primary-subtle rounded-bottom p-2">Response Data</div>
+            </div>
+            <div class="container border border-primary-subtle rounded shadow-sm mt-5 p-3 ">
+                <p class="">
+                    <input type="text" class="form-control" id="destination-port-2-input"
+                        placeholder="Destination Port">
+                </p>
+                <p class="">
+                    <input type="text" class="form-control" id="data-length-2-input" placeholder="Data Length">
+
+                </p>
+            </div>
+            <div class="submit mt-4">
+                <button type="button" onclick="verifyBreakdown()" class="btn btn-dark">Verify Breakdown</button>
+            </div>
+        </div>
+        <!-- History log -->
+        <div class="col-3 mt-3 mx-2 p-2 border border-primary-subtle shadow">
+            <p class="h3">History Log</p>
+            <div class="" id="log"></div>
+
+        </div>
+
+    </div>   
+
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
